@@ -8,10 +8,9 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
-
+import ForecastCard from './ForecastCard';
 
 export default function WeatherCard({weather, forecast}) {
-    
   return (
     <section className="vh-100">
       <MDBContainer className="h-100">
@@ -25,7 +24,7 @@ export default function WeatherCard({weather, forecast}) {
                   </MDBTypography>
                 </div>
 
-                <div className="d-flex flex-column text-center mt-5 mb-4">
+                <div className="d-flex flex-column text-center mt-2 mb-2">
                   <MDBTypography
                     tag="h6"
                     className="display-4 mb-0 font-weight-bold"
@@ -57,14 +56,6 @@ export default function WeatherCard({weather, forecast}) {
                       />{" "}
                       <span className="ms-1"> {weather?.main?.humidity + "%"} </span>
                     </div>
-                    <div>
-                      <MDBIcon
-                        fas
-                        icon="sun fa-fw"
-                        style={{ color: "#868B94" }}
-                      />{" "}
-                      <span className="ms-1"> 0.2h </span>
-                    </div>
                   </div>
                   <div>
                     <img
@@ -73,19 +64,24 @@ export default function WeatherCard({weather, forecast}) {
                     />
                   </div>
                 </div>
-                {/* <div className="mt-5">
-                  {forecast.list.map((item, index) => (
-                    <div key={index} className="mt-4">
-                      <div>{item.date}</div>
-                      <div>{item.temperature}</div>
-                    </div>
-                  ))}
-                </div> */}
               </MDBCardBody>
             </MDBCard>
+            <ForecastCard forecast={forecast}/>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
     </section>
   )
 }
+
+/* function getBackgroundImage(description) {
+  // Define your logic to map the weather description to the appropriate image URL
+  // For example:
+  if (description.includes("sunny")) {
+    return "url('sunny.jpg')";
+  } else if (description.includes("cloudy")) {
+    return "url('cloudy.jpg')";
+  } else {
+    return "url(https://c02.purpledshub.com/uploads/sites/48/2023/02/why-sky-blue-2db86ae.jpg?w=1029&webp=1)";
+  }
+} */
