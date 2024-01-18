@@ -35,7 +35,7 @@ export default function WeatherCard({weather, forecast}) {
                     {Math.round(weather?.main?.temp) + "°C"}{" "}
                   </MDBTypography>
                   <span className="medium" style={{ color: "#868B94" }}>
-                    
+                  {weather?.weather?.[0]?.description}
                   </span>
                 </div>
 
@@ -47,7 +47,7 @@ export default function WeatherCard({weather, forecast}) {
                         icon="wind fa-fw"
                         style={{ color: "#868B94" }}
                       />{" "}
-                      <span className="ms-1"> </span>
+                      <span className="ms-1">{weather?.wind?.speed +" Km/h"} </span>
                     </div>
                     <div>
                       <MDBIcon
@@ -55,7 +55,7 @@ export default function WeatherCard({weather, forecast}) {
                         icon="tint fa-fw"
                         style={{ color: "#868B94" }}
                       />{" "}
-                      <span className="ms-1"> 84% </span>
+                      <span className="ms-1"> {weather?.main?.humidity + "%"} </span>
                     </div>
                     <div>
                       <MDBIcon
@@ -68,11 +68,19 @@ export default function WeatherCard({weather, forecast}) {
                   </div>
                   <div>
                     <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
+                      src={`https://openweathermap.org/img/wn/${weather?.weather?.[0]?.icon}@2x.png`}
                       width="100px"
                     />
                   </div>
                 </div>
+                {/* <div className="mt-5">
+                  {forecast.list.map((item, index) => (
+                    <div key={index} className="mt-4">
+                      <div>{item.date}</div>
+                      <div>{item.temperature}</div>
+                    </div>
+                  ))}
+                </div> */}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

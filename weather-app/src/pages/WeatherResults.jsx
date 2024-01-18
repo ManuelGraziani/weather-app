@@ -6,8 +6,8 @@ export default function WeatherResults() {
   const { id } = useParams();
   const [weather, setWeather] = useState([]);
   const [forecast, setForecast] = useState([])
-  const api = `http://api.openweathermap.org/data/2.5/weather?q=${id}&APPID=394f45aa55ab9a32fbd175e3d5c00808&units=metric`;
-  const api2 = `http://api.openweathermap.org/data/2.5/forecast?q=${id}&APPID=394f45aa55ab9a32fbd175e3d5c00808&units=metric`;
+  const api = `http://api.openweathermap.org/data/2.5/weather?q=${id}&APPID=394f45aa55ab9a32fbd175e3d5c00808&units=metric&lang=it`;
+  const api2 = `http://api.openweathermap.org/data/2.5/forecast?q=${id}&APPID=394f45aa55ab9a32fbd175e3d5c00808&units=metric&lang=it`;
 
   useEffect(() => {
     fetch(api)

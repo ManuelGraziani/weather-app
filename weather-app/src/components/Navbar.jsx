@@ -12,7 +12,7 @@ export default function Navbar() {
         <MDBContainer fluid>
           <Link className="navbar-brand" to="/">
             <img
-              src='https://i.pinimg.com/originals/06/c4/f7/06c4f70ec5931e2342e703e8a3f0a253.png'
+              src='../06c4f70ec5931e2342e703e8a3f0a253.png'
               height='30'
               alt=''
               loading='lazy'
